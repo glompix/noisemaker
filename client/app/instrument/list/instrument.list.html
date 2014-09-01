@@ -1,0 +1,13 @@
+<div ng-controller="InstrumentListCtrl">
+  <a ui-sref="instrument.add">+ New Instrument</a>
+  <table class="table">
+    <tr ng-repeat="instrument in instruments">
+      <td>
+        <a ui-sref="instrument.edit({ id : instrument._id })">Edit</a>
+      </td>
+      <td>
+        <a ui-sref="instrument.preview({ id : instrument._id })">{{ instrument.name }}</a>
+      </td>
+    </tr>
+  </table>
+</div>
