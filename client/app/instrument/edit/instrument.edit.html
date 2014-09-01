@@ -1,5 +1,4 @@
 <h2>{{instrument.name}}</h2>
-<p>{{instrument.notes}}</p>
-<textarea class="form-control" ng-model="instrument.code"></textarea>
-
+<textarea ui-codemirror ui-codemirror-opts="{ 'mode': 'javascript', 'lineNumbers': true }" ng-model="instrument.code"></textarea>
+<div ng-include="'app/instrument/preview/instrument.preview.html'"></div>
 <button class="btn btn-danger" ng-click="delete()">Delete</button>

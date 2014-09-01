@@ -6,7 +6,8 @@ angular.module('noisemakerApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.codemirror'
 ])
   .config(function ($urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

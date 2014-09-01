@@ -27,8 +27,7 @@ angular.module('noisemakerApp')
         views: {
           'left': _listView,
           'right': {
-            templateUrl: 'app/instrument/preview/instrument.preview.html',
-            controller: 'InstrumentPreviewCtrl'
+            templateUrl: 'app/instrument/preview/instrument.preview.html'
           }
         }
       })
