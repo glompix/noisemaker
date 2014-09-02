@@ -1,11 +1,12 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-3">
-      <div ng-include="'app/instrument/list/instrument.list.html'"></div>
-    </div>
-    <div class="col-md-6" ui-view="right">
-    </div>
+<div class="container-fluid" ui-view>
+  <div class="col-md-3">
+    <div ng-include="'app/instrument/list/_list.html'"></div>
+  </div>
+  <div class="col-md-9">
+    <p>
+      Please select an instrument.
+    </p>
   </div>
 </div>

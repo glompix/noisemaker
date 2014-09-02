@@ -8,6 +8,20 @@ angular.module('noisemakerApp')
         $scope.instrument = instrument;
       });
 
+    $scope.editorOptions = {
+      mode: 'javascript',
+      lineNumbers: true,
+      theme: 'http://localhost:9000/assets/themes/mbo.css'
+    };
+
+    $scope.save = function () {
+      instrumentService.update($scope.instrument)
+        .success(function(instrument) {
+          console.log('SAVED: ', instrument);
+          $scope.instrument = instrument;
+        });
+    };
+
     $scope.delete = function () {
       instrumentService.delete($scope.instrument)
         .success(function() {

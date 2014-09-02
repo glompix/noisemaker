@@ -11,6 +11,9 @@ angular.module('noisemakerApp')
     this.add = function(instrument) {
       return $http.post('/api/instruments', instrument);
     };
+    this.update = function(instrument) {
+      return $http.put('/api/instruments/' + instrument._id, instrument);
+    };
     this.delete = function(instrument) {
       return $http.delete('/api/instruments/' + instrument._id);
     };

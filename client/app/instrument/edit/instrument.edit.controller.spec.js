@@ -11,11 +11,13 @@ describe('Controller: InstrumentEditCtrl', function () {
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
     InstrumentAddCtrl = $controller('InstrumentEditCtrl', {
-      $scope: scope
+      $scope: scope,
+      $state: null,
+      $stateParams: { id: 1 },
+      instrumentService: null
     });
   }));
 
   it('should ...', function () {
-    expect(1).toEqual(1);
   });
 });

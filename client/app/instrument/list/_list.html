@@ -1,6 +1,6 @@
 <div ng-controller="InstrumentListCtrl">
   <a ui-sref="instrument.add">+ New Instrument</a>
-  <table class="table">
+  <table class="table table-bordered table-striped table-hover">
     <tr ng-repeat="instrument in instruments">
       <td>
         <a ui-sref="instrument.edit({ id : instrument._id })">Edit</a>

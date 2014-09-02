@@ -1,3 +1,7 @@
-<div class="col-md-12" ng-controller="InstrumentPreviewCtrl">
-This is the instrument.preview view.
+<div class="col-md-3">
+  <div ng-include="'app/instrument/list/_list.html'"></div>
+</div>
+<div class="col-md-9">
+  <h2>{{instrument.name}}</h2>
+  <div ng-include="'app/instrument/preview/_preview.html'"></div>
 </div>
