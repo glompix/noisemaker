@@ -4,6 +4,7 @@ describe('Controller: InstrumentListCtrl', function () {
 
   // load the controller's module
   beforeEach(module('noisemakerApp'));
+  beforeEach(module('socketMock'));
 
   var InstrumentCtrl, scope;
 

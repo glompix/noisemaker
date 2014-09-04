@@ -1,0 +1,24 @@
+seleniumProcess.pid: 36752
+Sep 3, 2014 10:43:44 PM org.openqa.grid.selenium.GridLauncher main
+INFO: Launching a standalone server
+Setting system property webdriver.chrome.driver to /usr/local/lib/node_modules/protractor/selenium/chromedriver
+22:43:44.609 INFO - Java: Apple Inc. 20.65-b04-462
+22:43:44.609 INFO - OS: Mac OS X 10.9.4 x86_64
+22:43:44.617 INFO - v2.42.2, with Core v2.42.2. Built from revision 6a6995d
+22:43:44.659 INFO - Default driver org.openqa.selenium.ie.InternetExplorerDriver registration is skipped: registration capabilities Capabilities [{platform=WINDOWS, ensureCleanSession=true, browserName=internet explorer, version=}] does not match with current platform: MAC
+22:43:44.700 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+22:43:44.700 INFO - Version Jetty/5.1.x
+22:43:44.701 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+22:43:44.701 INFO - Started HttpContext[/selenium-server,/selenium-server]
+22:43:44.701 INFO - Started HttpContext[/,/]
+22:43:44.728 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@7786df0f
+22:43:44.728 INFO - Started HttpContext[/wd,/wd]
+22:43:44.732 INFO - Started SocketListener on 0.0.0.0:4444
+22:43:44.732 INFO - Started org.openqa.jetty.jetty.Server@7c4c51
+Attempting to shut down selenium nicely
+22:43:47.990 INFO - Checking Resource aliases
+22:43:47.991 INFO - Command request: shutDownSeleniumServer[, ] on session null
+22:43:47.992 INFO - Shutdown command received
+22:43:47.993 INFO - initiating shutdown
+22:43:47.995 INFO - Got result: OK on session null
+Selenium Standalone has exited with code 0
