@@ -3,7 +3,7 @@
 angular.module('noisemakerApp')
   .controller('InstrumentEditCtrl', function ($scope, $state, $stateParams, instrumentService) {
     this.$inject = ['$scope', '$state', '$stateParams', 'instrumentService'];
-    
+
     instrumentService.get($stateParams.id)
       .success(function (instrument) {
         $scope.instrument = instrument;
@@ -12,13 +12,12 @@ angular.module('noisemakerApp')
     $scope.editorOptions = {
       mode: 'javascript',
       lineNumbers: true,
-      theme: 'mbo'
+      theme: 'twilight'
     };
 
     $scope.save = function () {
       instrumentService.update($scope.instrument)
         .success(function(instrument) {
-          console.log('SAVED: ', instrument);
           $scope.instrument = instrument;
         });
     };
@@ -26,7 +25,7 @@ angular.module('noisemakerApp')
     $scope.delete = function () {
       instrumentService.delete($scope.instrument)
         .success(function() {
-          $state.go('instrument.default');
+          $state.go('instrument.list.default');
         })
         .error(function (data) {
           console.log('ERROR', data);

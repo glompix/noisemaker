@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-sm-3">
+    <div>
+      <a ui-sref="instrument.list.add"><i class="fa fa-plus"/> New Instrument</a>
+      <ul class="no-bullets text-right">
+        <li ng-repeat="instrument in instruments" class="instrument" ui-sref-active="active">
+          <a class="name" ui-sref="instrument.list.preview({ id : instrument._id })">
+            {{instrument.name}}
+          </a>
+          <i class="preview-active-icon" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-sm-9" ui-view>
+  </div>
+</div>

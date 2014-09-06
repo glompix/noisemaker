@@ -4,10 +4,10 @@ angular.module('noisemakerApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
-      'link': '/'
+      'state': 'main'
     }, {
       'title': 'Instruments',
-      'link': '/instrument'
+      'state': 'instrument.list.default'
     }];
 
     $scope.isCollapsed = true;

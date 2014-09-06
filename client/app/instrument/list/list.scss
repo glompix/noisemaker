@@ -1,0 +1,17 @@
+
+.instrument {
+  padding: 5px;
+  .name {
+    font-size: 135%;
+  }
+  .preview-active-icon {
+    display: none;
+    float: right;
+  }
+  &.active {
+    background: $gray-dark;
+    .preview-active-icon {
+      display: inline;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
 $fa-font-path: "/bower_components/font-awesome/fonts";
 
+@import "bootswatch-scss/cyborg/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
-@import "bootswatch-scss/amelia/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/bootstrap";
-@import "bootswatch-scss/amelia/bootswatch";
+@import "bootswatch-scss/cyborg/bootswatch";
 
 @import 'font-awesome/scss/font-awesome';
 
@@ -23,10 +23,12 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 // injector
 @import 'account/login/login.scss';
 @import 'admin/admin.scss';
-@import 'instrument/add/instrument.add.scss';
-@import 'instrument/edit/instrument.edit.scss';
+@import 'instrument/edit/edit.scss';
 @import 'instrument/instrument.scss';
-@import 'instrument/preview/instrument.preview.scss';
+@import 'instrument/list/add/add.scss';
+@import 'instrument/list/list.scss';
+@import 'instrument/list/preview/preview.scss';
 @import 'main/main.scss';
+@import 'util.scss';
 @import 'modal/modal.scss';
 // endinjector
