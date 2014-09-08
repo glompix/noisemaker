@@ -1,16 +1,22 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2>
-      {{instrument.name}}
-      <a class="text-smaller" ui-sref="instrument.list.preview({ 'id': instrument._id })">Back</a>
-    </h2>
-    <textarea ui-codemirror="editorOptions" ng-model="instrument.code"></textarea>
+<div class="row app-panel instrument-edit">
+  <div class="col-md-6 app-panel">
+    <div class="header-panel">
+      <h3>{{instrument.name}}</h3>
+    </div>
+    <div class="editor-panel clear">
+      <textarea ui-codemirror="editorOptions" ng-model="instrument.code"></textarea>
+    </div>
     <div class="action-bar">
       <button class="btn btn-primary" ng-click="save()">Save</button>
-      <button class="btn btn-danger" ng-click="delete()">Delete</button>
+      <a class="btn" ui-sref="instrument.list.preview({id: instrument._id})">Back to list</a>
+      <button class="pull-right btn btn-danger" ng-click="delete()">Delete</button>
     </div>
   </div>
-  <div class="col-md-6">
-    <pre>{{instrument.code}}</pre>
+  <div class="col-md-6 app-panel">
+    <div class="tool-panel">
+      <button ng-click="addKey()" class="btn btn-default">New Key</button>
+    </div>
+    <div class="preview-panel">
+    </div>
   </div>
 </div>

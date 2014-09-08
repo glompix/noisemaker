@@ -12,7 +12,11 @@ angular.module('noisemakerApp')
     $scope.editorOptions = {
       mode: 'javascript',
       lineNumbers: true,
-      theme: 'twilight'
+      theme: 'mbo'
+    };
+
+    $scope.addKey = function () {
+
     };
 
     $scope.save = function () {

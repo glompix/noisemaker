@@ -19,6 +19,35 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
     padding: 0.2em 0;
 }
 
+html {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: $body-bg no-repeat center center fixed;
+  min-height:100%;
+}
+
+.app-bar {
+  margin: 0;
+  min-width: 450px;
+}
+
+.app-body {
+  position: fixed;
+  width: 100%;
+  top: $navbar-height;
+  bottom: 0;
+}
+
+.CodeMirror, .CodeMirror-scroll {
+  height: 100%;
+}
+.app-panel {
+  height: 100%;
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'account/login/login.scss';

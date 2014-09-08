@@ -1,17 +1,11 @@
 
 .instrument {
-  padding: 5px;
   .name {
-    font-size: 135%;
+    color: #eee;
   }
-  .preview-active-icon {
-    display: none;
-    float: right;
-  }
-  &.active {
-    background: $gray-dark;
-    .preview-active-icon {
-      display: inline;
-    }
-  }
+}
+
+.list-panel {
+  @extend .app-panel;
+  max-width: 300px;
 }

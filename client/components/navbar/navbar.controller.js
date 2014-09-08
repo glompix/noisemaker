@@ -8,6 +8,9 @@ angular.module('noisemakerApp')
     }, {
       'title': 'Instruments',
       'state': 'instrument.list.default'
+    }, {
+      'title': 'Projects',
+      'state': 'project.list.default'
     }];
 
     $scope.isCollapsed = true;
