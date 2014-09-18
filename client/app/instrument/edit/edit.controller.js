@@ -15,10 +15,6 @@ angular.module('noisemakerApp')
       theme: 'mbo'
     };
 
-    $scope.addKey = function () {
-
-    };
-
     $scope.save = function () {
       instrumentService.update($scope.instrument)
         .success(function(instrument) {

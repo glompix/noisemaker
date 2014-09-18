@@ -1,3 +1,14 @@
 .preview {
   color: #f00;
 }
+
+.key circle {
+  fill: lightsteelblue;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.key circle.dragging {
+  fill: red;
+  stroke: brown;
+}

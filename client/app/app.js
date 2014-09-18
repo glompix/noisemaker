@@ -7,7 +7,8 @@ angular.module('noisemakerApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'ui.codemirror'
+  'ui.codemirror',
+  'd3'
 ])
   .config(function ($urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

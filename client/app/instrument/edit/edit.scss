@@ -3,11 +3,9 @@
     padding: $padding-base-vertical;
   }
   .editor-panel {
-    height: 100%;
-    min-height: 570px;
   }
   .action-bar {
-    min-height: 37px;
+    height: 37px;
     padding: 12px;
   }
   .instrument-preview {
@@ -15,10 +13,23 @@
     height: 100%;
   }
   .tool-panel {
-    height: 5%;
+    height: 30px;
+    margin: 10px 0 10px 0;
+  }
+  .keyedit-panel {
+    .position input, .input-group-addon {
+      width: 3.5em;
+    }
+  }
+  .keylist-panel {
+    max-height: 150px;
+    overflow-y: scroll;
+    a { cursor: pointer; }
   }
   .preview-panel {
     background: #333;
-    height: 200px;
+    height: 100%;
+    position: absolute;
+    top: 200px; left: 0; right: 0; bottom: 0;
   }
 }

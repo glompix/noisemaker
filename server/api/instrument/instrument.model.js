@@ -3,10 +3,16 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var InstrumentSchema = new Schema({
-  name: String,
+var Instrument = new Schema({
+  name: { type: String, required: true },
   info: String,
-  code: String
+  code: String,
+  keys: [{
+    name: { type: String, required: true, unique: true },
+    hotkey: String,
+    x: Number,
+    y: Number
+  }]
 });
 
-module.exports = mongoose.model('Instrument', InstrumentSchema);
+module.exports = mongoose.model('Instrument', Instrument);

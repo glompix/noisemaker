@@ -1,0 +1,8 @@
+[0;34mHTTP/1.1 200   0.54 secs:   20470 bytes ==> GET  /sitecore/v1/content/www/en-CA/home[0m
+[0;34mHTTP/1.1 200   0.57 secs:   20470 bytes ==> GET  /sitecore/v1/content/www/en-CA/home[0m
+[0;34mHTTP/1.1 200   0.29 secs:   20470 bytes ==> GET  /sitecore/v1/content/www/en-CA/home[0m
+[0;34mHTTP/1.1 200   0.27 secs:   20470 bytes ==> GET  /sitecore/v1/content/www/en-CA/home[0m
+FILE: /usr/local/var/siege.log
+You can disable this annoying message by editing
+the .siegerc file in your home directory; change
+the directive 'show-logfile' to false.
