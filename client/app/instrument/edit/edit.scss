@@ -22,14 +22,13 @@
     }
   }
   .keylist-panel {
-    max-height: 150px;
+    height: 250px;
+    max-height: 250px;
     overflow-y: scroll;
     a { cursor: pointer; }
   }
   .preview-panel {
     background: #333;
     height: 100%;
-    position: absolute;
-    top: 200px; left: 0; right: 0; bottom: 0;
   }
 }

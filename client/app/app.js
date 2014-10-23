@@ -1,5 +1,27 @@
 'use strict';
 
+// Instruments hook into this global.
+var InstrumentContext = {
+  keys: [],
+  hotkeys: {}
+};
+
+function dockeyUp(e) {
+  var key = InstrumentContext.hotkeys[e.keyCode];
+  if (key) {
+    key.deactivate();
+  }
+}
+document.addEventListener('keyup', dockeyUp, false);
+
+function dockeyDown(e) {
+  var key = InstrumentContext.hotkeys[e.keyCode];
+  if (key) {
+    key.activate();
+  }
+}
+document.addEventListener('keydown', dockeyDown, false);
+
 angular.module('noisemakerApp', [
   'ngCookies',
   'ngResource',
@@ -8,7 +30,8 @@ angular.module('noisemakerApp', [
   'ui.router',
   'ui.bootstrap',
   'ui.codemirror',
-  'd3'
+  'd3',
+  'ngLodash'
 ])
   .config(function ($urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
@@ -53,4 +76,8 @@ angular.module('noisemakerApp', [
         }
       });
     });
+  })
+
+  .run(function(lodash, utilities) {
+    lodash.mixin(utilities);
   });
