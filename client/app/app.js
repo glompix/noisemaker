@@ -3,21 +3,23 @@
 // Instruments hook into this global.
 var InstrumentContext = {
   keys: [],
-  hotkeys: {}
+  hotkeys: {
+    // { keyDown, keyUp, keyPress }
+  }
 };
 
 function dockeyUp(e) {
-  var key = InstrumentContext.hotkeys[e.keyCode];
-  if (key) {
-    key.deactivate();
+  var hotkey = InstrumentContext.hotkeys[e.keyCode];
+  if (hotkey) {
+    hotkey.keyUp();
   }
 }
 document.addEventListener('keyup', dockeyUp, false);
 
 function dockeyDown(e) {
-  var key = InstrumentContext.hotkeys[e.keyCode];
-  if (key) {
-    key.activate();
+  var hotkey = InstrumentContext.hotkeys[e.keyCode];
+  if (hotkey) {
+    hotkey.keyDown();
   }
 }
 document.addEventListener('keydown', dockeyDown, false);

@@ -28,8 +28,8 @@ angular.module('noisemakerApp')
 
           function toggle(key, i) {
             console.log(key);
-            if (key.active) { key.deactivate(); }
-            else { key.activate(); }
+            if (key.active) { key.deactivate(key); }
+            else { key.activate(key); }
             d3.event.stopPropagation();
           }
 
