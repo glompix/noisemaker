@@ -1,16 +1,9 @@
 'use strict';
 
-// Instruments hook into this global.
-var InstrumentContext = {
-  keys: [],
-  hotkeys: {
-    // { keyDown, keyUp, keyPress }
-  }
-};
-
 function dockeyUp(e) {
   var hotkey = InstrumentContext.hotkeys[e.keyCode];
-  if (hotkey) {
+  console.log('keyup', hotkey);
+  if (hotkey && hotkey.keyUp) {
     hotkey.keyUp();
   }
 }
@@ -18,7 +11,8 @@ document.addEventListener('keyup', dockeyUp, false);
 
 function dockeyDown(e) {
   var hotkey = InstrumentContext.hotkeys[e.keyCode];
-  if (hotkey) {
+  console.log('keydown', e.keyCode);
+  if (hotkey && hotkey.keyDown) {
     hotkey.keyDown();
   }
 }

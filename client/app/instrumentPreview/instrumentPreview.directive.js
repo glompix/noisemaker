@@ -27,9 +27,8 @@ angular.module('noisemakerApp')
             .on('click', toggle);
 
           function toggle(key, i) {
-            console.log(key);
-            if (key.active) { key.deactivate(key); }
-            else { key.activate(key); }
+            if (key.active) { key.deactivate(); }
+            else { key.activate(); }
             d3.event.stopPropagation();
           }
 
