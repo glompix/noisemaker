@@ -1,33 +1,37 @@
-// key = { descriptor, keyDown, keyUp, keyPress }
+// key = { keychord, keyDown, keyUp, keyPress }
 // TODO: non-destructive behavior
-function timbre(tkey) {
-  tkey.active = false;
+function timbre(opts) {
+  opts.active = false;
   function activate() {
-    if (!tkey.active) {
-      tkey.t.play();
-      tkey.active = true;
+    if (!opts.active) {
+      opts.t.play();
+      opts.active = true;
     }
   };
   function deactivate() {
-    if (tkey.active) {
-      tkey.t.pause();
-      tkey.active = false;
+    if (opts.active) {
+      opts.t.pause();
+      opts.active = false;
     }
   };
   function draw() {
     // TODO
   };
 
-  var keychord = tkey.hotkey
-  tkey.hotkey = {
-    keyCode: keycode(keychord),
-    keyDown: activate,
-    keyUp: deactivate
+  var keychord = opts.hotkey;
+  return {
+    active: false,
+    activate: activate,
+    deactivate: deactivate,
+    draw: draw,
+    x: opts.x,
+    y: opts.y,
+    hotkey: {
+      keyCode: Keyboard.keycode(keychord),
+      keyDown: activate,
+      keyUp: deactivate
+    }
   };
-  tkey.activate = activate;
-  tkey.deactivate = deactivate;
-  tkey.draw = draw;
-  return tkey;
 }
 
 InstrumentContext.KeyManager.register('timbre', timbre);

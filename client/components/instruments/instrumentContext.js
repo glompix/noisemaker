@@ -5,13 +5,13 @@ var InstrumentContext = {
 
   // instrument state
   keys: [],
-  hotkeys: {
-    // { keyCode, keyDown, keyUp, keyPress }
-  },
 
   // Utility objects
   KeyManager: {
     register: registerKeyClass,
+    clear: function() {
+      InstrumentContext.keys.length = 0;
+    },
     import: {
       // map of key names to keyGenerators
     }
@@ -24,12 +24,13 @@ function registerKeyClass(name, keyGenerator) {
 };
 
 function registerKeys(keyGenerator) {
-  return function registerKeys(keys) {
+  return function registerKeys(keyOpts) {
     InstrumentContext.keys = [];
-    for (var i = 0; i < keys.length; i++) {
-      var key = keys[i];
-      InstrumentContext.keys.push(keyGenerator(key));
-      InstrumentContext.hotkeys[key.hotkey.keyCode] = key.hotkey;
+    for (var i = 0; i < keyOpts.length; i++) {
+      var opts = keyOpts[i];
+      var key = keyGenerator(opts);
+      InstrumentContext.keys.push(key);
+      Keyboard.hotkeys.register(key.hotkey);
     }
   };
 };

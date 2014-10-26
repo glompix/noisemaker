@@ -1,5 +1,19 @@
 var Keyboard = {
   keycode: keycode,
+  hotkeys: {
+    register: function(hotkey) {
+      Keyboard.hotkeys[hotkey.keyCode] = hotkey;
+    }
+  },
+  layout: {
+    name: 'qwerty',
+    keyrows: [
+      ["`","1","2","3","4","5","6","7","8","9","0","-","="],
+      ["q","w","e","r","t","y","u","i","o","p","[","]"],
+      ["a","s","d","f","g","h","j","k","l",";","'"],
+      ["z","x","c","v","b","n","m",",",".","/"]
+    ]
+  },
   state: {
     "backspace": { keyCode: 8 },
     "tab": { keyCode: 9 },
@@ -56,6 +70,17 @@ var Keyboard = {
     "x": { keyCode: 88 },
     "y": { keyCode: 89 },
     "z": { keyCode: 90 },
+    ";": { keyCode: 186 },
+    "=": { keyCode: 187 },
+    ",": { keyCode: 188 },
+    "-": { keyCode: 189 },
+    ".": { keyCode: 190 },
+    "/": { keyCode: 191 },
+    "`": { keyCode: 192 },
+    "[": { keyCode: 219 },
+    "\\": { keyCode: 220 },
+    "]": { keyCode: 221 },
+    "'": { keyCode: 222 },
     "numpad0": { keyCode: 96 },
     "numpad1": { keyCode: 97 },
     "numpad2": { keyCode: 98 },
