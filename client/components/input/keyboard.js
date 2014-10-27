@@ -1,17 +1,16 @@
 var Keyboard = {
-  keycode: keycode,
   hotkeys: {
     register: function(hotkey) {
-      Keyboard.hotkeys[hotkey.keyCode] = hotkey;
+      KeyboardJS.on(hotkey.keyCode, hotkey.keyDown, hotkey.keyUp);
     }
   },
   layout: {
     name: 'qwerty',
     keyrows: [
-      ["`","1","2","3","4","5","6","7","8","9","0","-","="],
-      ["q","w","e","r","t","y","u","i","o","p","[","]"],
-      ["a","s","d","f","g","h","j","k","l",";","'"],
-      ["z","x","c","v","b","n","m",",",".","/"]
+      ["`","1","2","3","4","5","6","7","8","9","0"], //,"-","="],
+      ["q","w","e","r","t","y","u","i","o","p"], //,"[","]"],
+      ["a","s","d","f","g","h","j","k","l"], //,";","'"],
+      ["z","x","c","v","b","n","m"] //,",",".","/"]
     ]
   },
   state: {
@@ -89,9 +88,4 @@ var Keyboard = {
     "numpad5": { keyCode: 101 },
     "numpad6": { keyCode: 102 }
   }
-}
-
-function keycode(keychord) {
-  // TODO: fill this out with "^z" sort of codes like AHK.
-  return Keyboard.state[keychord].keyCode;
-}
+};

@@ -5,6 +5,7 @@ var InstrumentContext = {
 
   // instrument state
   keys: [],
+  draw: function ()  { },
 
   // Utility objects
   KeyManager: {
@@ -28,7 +29,7 @@ function registerKeys(keyGenerator) {
     InstrumentContext.keys = [];
     for (var i = 0; i < keyOpts.length; i++) {
       var opts = keyOpts[i];
-      var key = keyGenerator(opts);
+      var key = keyGenerator(opts, InstrumentContext.svg);
       InstrumentContext.keys.push(key);
       Keyboard.hotkeys.register(key.hotkey);
     }

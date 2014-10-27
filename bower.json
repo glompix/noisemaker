@@ -19,7 +19,9 @@
     "codemirror": ">=4.5.0",
     "angular-ui-codemirror": "~0.1.6",
     "d3": "~3.4.11",
-    "ng-lodash": "~0.0.2"
+    "ng-lodash": "~0.0.2",
+    "bootswatch-scss": "~3.2.0",
+    "KeyboardJS": "~0.4.2"
   },
   "devDependencies": {
     "angular-mocks": ">=1.2.*",
@@ -27,6 +29,7 @@
     "chalk": "~0.5.1"
   },
   "resolutions": {
-    "angular": "~1.2.25"
+    "angular": "~1.2.25",
+    "bootstrap-sass-official": "~3.2.0"
   }
 }

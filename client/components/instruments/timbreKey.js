@@ -1,37 +1,43 @@
 // key = { keychord, keyDown, keyUp, keyPress }
 // TODO: non-destructive behavior
 function timbre(opts) {
-  opts.active = false;
+  var inputs = $(':input');
   function activate() {
-    if (!opts.active) {
-      opts.t.play();
-      opts.active = true;
+    if (!key.active && !inputs.filter(':focus').length) {
+      key.t.play();
+      key.active = true;
     }
   };
   function deactivate() {
-    if (opts.active) {
-      opts.t.pause();
-      opts.active = false;
+    if (key.active) {
+      key.t.pause();
+      key.active = false;
     }
   };
-  function draw() {
-    // TODO
+  function draw(svg) {
+    var keyRects = svg.selectAll('rect').data(InstrumentContext.keys);
+    keyRects.enter().append('rect');
+    keyRects
+      .attr('class', function(key) { return 'key' + (key.active ? ' active' : ''); })
+      .attr('width', 30)
+      .attr('height', 30)
+      .attr('x', function(key) { return key.x; })
+      .attr('y', function(key) { return key.y; })
+      .attr('data-key', function(key) { return key.label });
+    keyRects.exit().remove();
   };
 
-  var keychord = opts.hotkey;
-  return {
+  var key = {
     active: false,
-    activate: activate,
-    deactivate: deactivate,
-    draw: draw,
-    x: opts.x,
-    y: opts.y,
+    t: opts.t,
     hotkey: {
-      keyCode: Keyboard.keycode(keychord),
+      keyCode: opts.hotkey,
       keyDown: activate,
       keyUp: deactivate
-    }
+    },
+    draw: draw
   };
+  return key;
 }
 
 InstrumentContext.KeyManager.register('timbre', timbre);

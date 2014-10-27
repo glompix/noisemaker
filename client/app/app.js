@@ -1,23 +1,5 @@
 'use strict';
 
-function dockeyUp(e) {
-  var hotkey = Keyboard.hotkeys[e.keyCode];
-  console.log('keyup', hotkey);
-  if (hotkey && hotkey.keyUp) {
-    hotkey.keyUp();
-  }
-}
-document.addEventListener('keyup', dockeyUp, false);
-
-function dockeyDown(e) {
-  var hotkey = Keyboard.hotkeys[e.keyCode];
-  console.log('keydown', e.keyCode);
-  if (hotkey && hotkey.keyDown) {
-    hotkey.keyDown();
-  }
-}
-document.addEventListener('keydown', dockeyDown, false);
-
 angular.module('noisemakerApp', [
   'ngCookies',
   'ngResource',
