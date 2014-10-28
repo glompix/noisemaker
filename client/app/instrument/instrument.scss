@@ -1,0 +1,9 @@
+.preview-panel .key {
+  fill: #bbb;
+  stroke: #000;
+
+  &.active {
+    fill: #f99;
+    stroke: #600;
+  }
+}

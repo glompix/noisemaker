@@ -8,7 +8,7 @@ angular.module('noisemakerApp')
       restrict: 'EA',
       link: function (scope, element, attrs) {
         var svg = d3.select(element.find('svg')[0]);
-        InstrumentContext.draw = function () { console.log('sup'); InstrumentContext.drawBase(svg); };
+        InstrumentContext.draw = function () { InstrumentContext.drawBase(svg); };
         scope.$watch('instrument', function(newValue) {
           if (newValue) {
             // eval('(function () { ' + scope.instrument.code + ' })();'); // unchecked eval for the win

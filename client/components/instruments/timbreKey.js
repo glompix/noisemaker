@@ -6,12 +6,14 @@ function timbre(opts) {
     if (!key.active && !inputs.filter(':focus').length) {
       key.t.play();
       key.active = true;
+      InstrumentContext.draw();
     }
   };
   function deactivate() {
     if (key.active) {
       key.t.pause();
       key.active = false;
+      InstrumentContext.draw();
     }
   };
   function draw(svg) {
@@ -30,6 +32,7 @@ function timbre(opts) {
   var key = {
     active: false,
     t: opts.t,
+    x: opts.x, y: opts.y,
     hotkey: {
       keyCode: opts.hotkey,
       keyDown: activate,
