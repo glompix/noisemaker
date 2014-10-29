@@ -1,0 +1,8 @@
+<div>
+  <h3 class="pull-left">
+    {{project.name}}
+    <a class="text-smaller" ui-sref="project.edit({ id : project._id })">Edit</a>
+  </h3>
+</div>
+<p>{{project.notes}}</p>
+<project-preview class="clear project-preview" radius="30" project="project" />

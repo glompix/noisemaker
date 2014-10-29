@@ -1,0 +1,11 @@
+
+.project {
+  .name {
+    color: #eee;
+  }
+}
+
+.list-panel {
+  @extend .app-panel;
+  max-width: 300px;
+}

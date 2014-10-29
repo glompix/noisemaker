@@ -5,7 +5,10 @@ angular.module('noisemakerApp')
 
     return {
       templateUrl: 'app/instrumentPreview/instrumentPreview.html',
-      restrict: 'EA',
+      restrict: 'E',
+      scope: {
+        instrument: '='
+      },
       link: function (scope, element, attrs) {
         var svg = d3.select(element.find('svg')[0]);
         InstrumentContext.draw = function () { InstrumentContext.drawBase(svg); };

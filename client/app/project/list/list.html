@@ -1,0 +1,20 @@
+<div class="row app-body">
+  <div class="col-sm-3 list-panel">
+    <div>
+      <h3>Projects</h3>
+      <ul class="list-group">
+        <li>
+          <a ui-sref="project.list.add" class="btn btn-default btn-block"><i class="fa fa-plus"/> New Project</a>
+        </li>
+        <li ng-repeat="project in projects" class="list-group-item project" ui-sref-active="active">
+          <a class="name" ui-sref="project.list.preview({ id : project._id })">
+            {{project.name}}
+          </a>
+          <i class="preview-active-icon" />
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-sm-9 app-panel" ui-view>
+  </div>
+</div>
